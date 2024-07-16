@@ -1,3 +1,8 @@
+/* Condense the dweight.c program by (1) replacing the assignments height, length and width
+* with initialisers and (2) removing the weight variable, instead calculating (volume + 165) / 166
+* within the last printf.
+*/
+
 /* Computes the dimensional weight of a 12" x 10" x 8" box */
 
 #include <stdio.h>
