@@ -30,9 +30,17 @@ int main (){
     printf("Enter purchase date (dd/mm/yyyy): ");
     scanf("%d/%d/%d", &day, &month, &year);
     
-    printf("Item\tUnit\tPurchase\n");
+    printf("\nItem\tUnit\tPurchase\n");
     printf("\tprice\tdate\n");
     printf("%-d\t$%4.2f\t%d/%d/%d", item, unit_price, day, month, year);
     
     return 0;
 }
+
+// Enter item number: 888
+// Enter unit price: 456.54
+// Enter purchase date (dd/mm/yyyy): 17/02/1997
+//
+// Item    Unit    Purchase
+//         price   date
+// 888     $456.54 17/2/1997
