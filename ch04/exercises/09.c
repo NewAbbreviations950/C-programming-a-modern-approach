@@ -11,7 +11,7 @@ int main(void)
     
     // a 
     i = 7; j = 8;
-    i *= j + 1;
+    i *= j + 1;                       // does j+1 first
     printf("%d %d\n", i, j);          // 63 8
     
     // b
