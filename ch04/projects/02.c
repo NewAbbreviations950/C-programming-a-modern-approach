@@ -20,8 +20,7 @@ int main(void)
     printf("Enter a three digit number: ");
     scanf("%d", &original_number);
     
-    printf("The reversal is: %d%d%d\n", ((original_number % 100) % 10), ((original_number % 100) / 10),
-                ((original_number / 10) / 10));
+    printf("The reversal is: %d%d%d\n", original_number % 10, original_number / 10 % 10,
+                original_number / 100);
     
     return 0;
-}
