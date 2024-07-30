@@ -14,5 +14,5 @@ int main()
     return 0;
 }
 
-// the statement isn't legal as it is evaluated as
-// (n >= 1) <= 10 which will always evaluate to true
+// the statement is legal but doesn't behave as expected as it is evaluated as
+// (n >= 1) <= 10 which will always evaluate to true and return a 1 value
