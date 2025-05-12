@@ -22,7 +22,8 @@ int main()
   float highest_number, temp_number;
   int first_input = 1; //Flag to check if the first input is a valid number
     
-	printf("This program returns the largest number in a series of numbers entered by the user.\n");
+	printf("This program returns the largest number in a series of positive numbers entered by the user.\n");
+	printf("Enter 0 or a nonnegative number to exit the program.\n");
 	
 	while (1) {
 	    printf("Enter a number: ");
