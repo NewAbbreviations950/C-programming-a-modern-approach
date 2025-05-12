@@ -29,7 +29,10 @@ int main()
 	    printf("Enter a number: ");
 	    scanf("%f", &temp_number);
 	    
-	    if (temp_number <= 0) {
+	    if (temp_number <= 0 && first_input) {
+	        printf("Please enter at least one valid number.\n");
+	        continue;
+	    } else if (temp_number <= 0) {
 	        break;
 	    }
 	    
@@ -42,9 +45,9 @@ int main()
 	}
 	
 	if (first_input) {
-	    printf("No valid numbers entered.\n");
+	    printf("No valid numbers entered. Please enter at least one valid number.\n");
 	} else {
-	    printf("The Highest number entered was: %.2f", highest_number);
+	    printf("The Highest number entered was: %g", highest_number);
 	}
 	
     return 0;
