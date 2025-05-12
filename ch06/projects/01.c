@@ -21,16 +21,27 @@ int main()
 {
   float highest_number, temp_number;
   int first_input = 1; //Flag to check if the first input is a valid number
+  int early_exit_prompted =0; //Flag for exiting the program before any valid entries are made
     
 	printf("This program returns the largest number in a series of positive numbers entered by the user.\n");
-	printf("Enter 0 or a nonnegative number to exit the program.\n");
+	printf("Enter 0 or a negative number to exit the program.\n");
 	
 	while (1) {
 	    printf("Enter a number: ");
-	    scanf("%f", &temp_number);
+	    if (scanf("%f", &temp_number) != 1) {
+	        printf("Invalid input. Please enter a positive number.\n");
+	        int c;
+	        do {
+	            c = getchar();
+	        }
+            while (c != '\n' && c != EOF);
+            continue;
+	    }
 	    
-	    if (temp_number <= 0 && first_input) {
-	        printf("Please enter at least one valid number.\n");
+	    if (temp_number <= 0 && first_input && !early_exit_prompted) {
+	        printf("You haven't entered any valid numbers yet.\n");
+	        printf("Please enter a valid number to continue or enter an invalid number again to exit.\n");
+	        early_exit_prompted = 1;
 	        continue;
 	    } else if (temp_number <= 0) {
 	        break;
@@ -45,11 +56,11 @@ int main()
 	}
 	
 	if (first_input) {
-	    printf("No valid numbers entered. Please enter at least one valid number.\n");
+	    printf("No valid numbers entered.\n");
 	} else {
-	    printf("The Highest number entered was: %g", highest_number);
+	    printf("The highest number entered was: %g\n", highest_number);
 	}
-	
+
     return 0;
 
 }
